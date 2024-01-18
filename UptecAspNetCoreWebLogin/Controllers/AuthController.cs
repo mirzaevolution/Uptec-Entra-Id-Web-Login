@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Authorization;
@@ -8,13 +8,6 @@ namespace UptecAspNetCoreWebLogin.Controllers
 {
     public class AuthController : Controller
     {
-        private readonly IConfiguration _configuration;
-
-        public AuthController(IConfiguration configuration)
-        {
-            _configuration = configuration;
-        }
-
         public IActionResult Login(string redirectUrl = "/")
         {
             return Challenge(new AuthenticationProperties
